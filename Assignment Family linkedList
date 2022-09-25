@@ -1,0 +1,55 @@
+/* Created by -
+    Harmandeep Singh
+    19108029
+    Contact - 
+    harmandeepsingh297@gmail.com
+    9779988395
+ */
+
+#include <iostream>
+using namespace std;
+
+class Node{
+    
+public:
+    string name;
+    int age;
+    Node* prev;
+    Node* next;
+    
+    //Constructor for easy intitialisation
+    Node(string name,int age){
+        this->name = name;
+        this->age = age;
+        prev = next = NULL;
+    }
+};
+
+
+int main(){
+    Node *head,*tail;
+    head = tail = NULL;
+    
+    //Creating father
+    Node *father = new Node("Bahader Singh",52);
+    head = tail = father;
+    
+    //Creating mother
+    Node *mother = new Node("Jaswinder Kaur",51);
+    tail->next = mother;
+    mother->prev = tail;
+    tail = tail->next;
+    
+    //Creating brother
+    Node *brother = new Node("Rajandeep Singh",25);
+    tail->next = brother;
+    brother->prev = tail;
+    tail = tail->next;
+    
+    //Creating myself
+    Node *myself = new Node("Harmandeep Singh",22);
+    tail->next = myself;
+    myself->prev = tail;
+    tail = tail->next;
+    
+}
